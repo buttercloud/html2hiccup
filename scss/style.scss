@@ -1,0 +1,79 @@
+// Bourbon
+@import "../bower/bourbon/dist/bourbon";
+@import "../bower/neat/app/assets/stylesheets/neat";
+
+$primary-color: #2f0769;
+$secondary-color: #07f8dc;
+
+body {
+  background-image: url("/img/bg.jpg");
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  color: $primary-color;
+  font-size: 16px;
+}
+
+header {
+  background-color: #d4d4d4;
+  height: 125px;
+  width: 100%;
+  padding: 1%;
+  #logo {}
+}
+
+aside {
+  @include outer-container;
+  max-width: inherit;
+  margin: 25px auto;
+  width: 98%;
+
+  .intro, .sponsor {
+    @include span-columns(6);
+    color: $primary-color;
+    font-size: 14px;
+  }
+
+  .sponsor {
+    text-align: right;
+    #sponsor-img {
+      height: 100px;
+    }
+  }
+}
+
+main {
+  @include outer-container;
+  max-width: inherit;
+  margin: 0 auto;
+  width: 98%;
+  height: 100%;
+
+  #from-box, #to-box {
+    @include span-columns(6);
+  }
+
+  textarea, .CodeMirror {
+    @include border-top-radius(5px);
+    @include border-right-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+    @include border-color ($primary-color);
+    width: 100%;
+    height: 450px;
+
+  }
+}
+
+footer {
+  margin-top: 10px;
+  background-color: $secondary-color;
+  text-align: right;
+  color: $primary-color;
+  font-size: 12px;
+  padding: 10px;
+  a {
+    color: #fff;
+  }
+}

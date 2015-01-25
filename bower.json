@@ -1,0 +1,25 @@
+{
+  "name": "html2hiccup",
+  "version": "0.0.0",
+  "authors": [
+    "Ahmad Faisal Hammad <afhammad@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/bower/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "css-toggle-switch": "~3.1.1"
+  },
+  "devDependencies": {
+    "bourbon": "4.0.1",
+    "neat": "~1.7.0",
+    "normalize-css": "~3.0.2"
+  }
+}
