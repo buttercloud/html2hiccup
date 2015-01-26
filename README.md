@@ -32,3 +32,7 @@ Prepare assets:
 Upload to S3:
 
     gulp upload
+
+Prepare and deploy in one go:
+
+    gulp deploy

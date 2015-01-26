@@ -10,3 +10,5 @@ pom.xml.asc
 /resources/public/js
 /out
 /.repl
+/js/prod
+/deploy

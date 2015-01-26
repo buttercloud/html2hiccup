@@ -21,13 +21,13 @@
 
   :cljsbuild {:builds {:dev {:source-paths ["src/cljs"]
                              :compiler {:optimizations :none
-                                        :output-to "js/app_dev.js"
+                                        :output-to "js/app.js"
                                         :output-dir "js/out"
                                         :pretty-print true
                                         :source-map true}}
                        :prod {:source-paths ["src/cljs"]
                               :compiler {:optimizations :advanced
-                                         :output-to "js/prod/app.js"
+                                         :output-to "js/app.js"
                                          :output-dir "js/prod/out"
                                          :externs ["js/codemirror-externs.js"]
                                          :pretty-print false
