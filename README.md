@@ -1,5 +1,10 @@
 # html2hiccup
 
+Converts HTML into Hiccup compatible Clojure syntax. Heavy lifting done by [hickory](https://github.com/davidsantiago/hickory).
+
+This app is entirely client-side using HTML, SCSS and ClojureScript.
+
+You can try it here: [HTML2Hiccup](https://html2hiccup.buttercloud.com).
 
 ## Development
 
