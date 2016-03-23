@@ -55,29 +55,32 @@ main {
   margin: 0 auto;
   width: 98%;
   height: 100%; }
-  main:after {
-    content: "";
-    display: table;
-    clear: both; }
-  main #from-box, main #to-box {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
-    main #from-box:last-child, main #to-box:last-child {
-      margin-right: 0; }
-  main textarea, main .CodeMirror {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-color: #2f0769;
-    width: 100%;
-    height: 450px; }
+main:after {
+  content: "";
+  display: table;
+  clear: both; }
+main #from-box, main #to-box {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  main #from-box:last-child, main #to-box:last-child {
+    margin-right: 0; }
+main textarea {
+  font-size: 0.7rem;
+}
+main textarea, main .CodeMirror {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-color: #2f0769;
+  width: 100%;
+  height: 450px; }
 
 footer {
   margin-top: 10px;
