@@ -4,7 +4,7 @@ Converts HTML into Hiccup compatible Clojure syntax. Heavy lifting done by [hick
 
 This app is entirely client-side using HTML, SCSS and ClojureScript.
 
-You can try it here: [HTML2Hiccup](https://html2hiccup.buttercloud.com).
+You can try it here: [HTML2Hiccup](http://html2hiccup.buttercloud.com).
 
 ## Development
 
