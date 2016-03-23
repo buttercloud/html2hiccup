@@ -9,8 +9,10 @@ pom.xml.asc
 /.nrepl-port
 /resources/public/js
 /out
+/js/out
 /.repl
 /js/prod
 /deploy
 config.json
 .sass-cache
+*.map

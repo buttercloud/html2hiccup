@@ -20,7 +20,16 @@ header {
   height: 125px;
   width: 100%;
   padding: 1%;
-  #logo {}
+  #logo {
+    float: left;
+  }
+  .sponsor {
+    float: right;
+    text-align: right;
+     #sponsor-img {
+      height: 100px; 
+    }
+  }
 }
 
 aside {
@@ -29,17 +38,10 @@ aside {
   margin: 25px auto;
   width: 98%;
 
-  .intro, .sponsor {
+  .intro{
     @include span-columns(6);
     color: $primary-color;
     font-size: 14px;
-  }
-
-  .sponsor {
-    text-align: right;
-    #sponsor-img {
-      height: 100px;
-    }
   }
 }
 
@@ -67,9 +69,11 @@ main {
 }
 
 footer {
-  margin-top: 10px;
   background-color: $secondary-color;
-  text-align: right;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   color: $primary-color;
   font-size: 12px;
   padding: 10px;

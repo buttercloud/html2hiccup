@@ -21,17 +21,13 @@ header {
   height: 125px;
   width: 100%;
   padding: 1%; }
-
-#logo {
-  float: left;
-} 
-
-.sponsor {
-  float: right;
-  text-align: right; }
-
-.sponsor #sponsor-img {
-  height: 100px; }
+  header #logo {
+    float: left; }
+  header .sponsor {
+    float: right;
+    text-align: right; }
+    header .sponsor #sponsor-img {
+      height: 100px; }
 
 aside {
   max-width: 68em;
@@ -40,19 +36,19 @@ aside {
   max-width: inherit;
   margin: 25px auto;
   width: 98%; }
-aside:after {
-  content: "";
-  display: table;
-  clear: both; }
-aside .intro {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%;
-  color: #2f0769;
-  font-size: 14px; }
-aside .intro:last-child {
-  margin-right: 0; }
+  aside:after {
+    content: "";
+    display: table;
+    clear: both; }
+  aside .intro {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    color: #2f0769;
+    font-size: 14px; }
+    aside .intro:last-child {
+      margin-right: 0; }
 
 main {
   max-width: 68em;
@@ -62,35 +58,31 @@ main {
   margin: 0 auto;
   width: 98%;
   height: 100%; }
-main:after {
-  content: "";
-  display: table;
-  clear: both; }
-main #from-box, main #to-box {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%; }
-  main #from-box:last-child, main #to-box:last-child {
-    margin-right: 0; }
-main textarea {
-  font-size: 0.7rem;
-}
-main textarea, main .CodeMirror {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-color: #2f0769;
-  width: 100%;
-  height: 450px; }
+  main:after {
+    content: "";
+    display: table;
+    clear: both; }
+  main #from-box, main #to-box {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    main #from-box:last-child, main #to-box:last-child {
+      margin-right: 0; }
+  main textarea, main .CodeMirror {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: #2f0769;
+    width: 100%;
+    height: 450px; }
 
 footer {
-  margin-top: 10px;
   background-color: #07f8dc;
   position: fixed;
   bottom: 0;
