@@ -22,6 +22,17 @@ header {
   width: 100%;
   padding: 1%; }
 
+#logo {
+  float: left;
+} 
+
+.sponsor {
+  float: right;
+  text-align: right; }
+
+.sponsor #sponsor-img {
+  height: 100px; }
+
 aside {
   max-width: 68em;
   margin-left: auto;
@@ -29,23 +40,19 @@ aside {
   max-width: inherit;
   margin: 25px auto;
   width: 98%; }
-  aside:after {
-    content: "";
-    display: table;
-    clear: both; }
-  aside .intro, aside .sponsor {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
-    color: #2f0769;
-    font-size: 14px; }
-    aside .intro:last-child, aside .sponsor:last-child {
-      margin-right: 0; }
-  aside .sponsor {
-    text-align: right; }
-    aside .sponsor #sponsor-img {
-      height: 100px; }
+aside:after {
+  content: "";
+  display: table;
+  clear: both; }
+aside .intro {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  color: #2f0769;
+  font-size: 14px; }
+aside .intro:last-child {
+  margin-right: 0; }
 
 main {
   max-width: 68em;
@@ -85,7 +92,10 @@ main textarea, main .CodeMirror {
 footer {
   margin-top: 10px;
   background-color: #07f8dc;
-  text-align: right;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   color: #2f0769;
   font-size: 12px;
   padding: 10px; }

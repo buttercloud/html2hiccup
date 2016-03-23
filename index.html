@@ -13,18 +13,10 @@
   <body>
     <header>
       <img id="logo" src="img/html2hiccup.png"></img>
-    </header>
-    <aside>
-      <div class="intro">
-        <p>Convert your HTML to Hiccup. Hiccup is an HTML representation in Clojure syntax using vectors <code>[]</code> to represent elements, and maps <code>#{}</code> to represent an element's attributes.</p>
-        <p>The resulting Hiccup is compatible with the following libraries:
-          <a href="https://github.com/weavejester/hiccup">Hiccup</a>, <a href="https://github.com/r0man/sablono">Sablono</a>. Know of any others? Let us know at info[at]buttercloud.com</p>
-      </div>
       <div class="sponsor">
-        <p>Brought to you by:</p>
         <a href="http://www.buttercloud.com"><img id="sponsor-img" src="img/buttercloud-logo.png"></img></a>
       </div>
-    </aside>
+    </header>
     <main>
       <div id="from-box">
         <h2>HTML (enter or paste your html code here)</h2>
@@ -35,6 +27,20 @@
         <textarea row="20" id="to-txt"></textarea>
       </div>
     </main>
+    <aside>
+      <div class="intro">
+        <p>Convert your HTML to Hiccup. Hiccup is an HTML representation in Clojure syntax using vectors <code>[]</code> to represent elements, and maps <code>#{}</code> to represent an element's attributes.</p>
+        <p>The resulting Hiccup is compatible with the following libraries:
+          <a href="https://github.com/weavejester/hiccup">Hiccup</a>,
+          <a href="https://github.com/reagent-project/reagent">Reagent</a>,
+          <a href="https://github.com/r0man/sablono">Sablono</a>. Know of any others? Let us know at info[at]buttercloud.com
+        </p>
+        <p>
+          Source code is available on <a href="https://github.com/buttercloud/html2hiccup">github</a>!
+        </p>
+      </div>
+    </aside>
+
     <footer>This site was built entirely client-side in ClojureScript and served solely through Amazon S3. Created by <a href="http://www.buttercloud.com">Buttercloud.com</a></footer>
     <!-- @exclude -->
     <script src="js/out/goog/base.js" type="text/javascript"></script>
