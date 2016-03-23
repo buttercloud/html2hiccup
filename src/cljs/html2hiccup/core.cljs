@@ -1,45 +1,61 @@
 (ns html2hiccup.core
   (:require [hickory.core :refer [parse parse-fragment as-hiccup]]
             [clojure.string :as string]
-            [dommy.core :as dommy :refer-macros [sel sel1]]
-            [cljs.reader :refer [read-string]]))
+            [cljsjs.codemirror]
+            [cljsjs.codemirror.mode.xml]
+            [cljsjs.codemirror.mode.clojure]
+            [cljsjs.codemirror.addon.edit.closetag]
+            [cljsjs.codemirror.addon.edit.closebrackets]
+            [cljsjs.codemirror.addon.edit.matchbrackets]))
 
 (enable-console-print!)
 
-(defonce cm
+(defonce cm-html
   (.fromTextArea js/CodeMirror 
-                 (sel1 :#to-txt) 
+                 (.getElementById js/document "from-txt") 
+                 #js {:lineNumbers true
+                      :mode "text/html"
+                      :indentWithTabs false
+                      :autoCloseTags true
+                      :autoCloseBrackets true
+                      :autofocus true
+                      :tabSize 2}))
+                      
+(defonce cm-clojure
+  (.fromTextArea js/CodeMirror 
+                 (.getElementById js/document "to-txt") 
                  #js {:lineNumbers true
                       :mode "clojure"
                       :indentWithTabs false
-                      :tabSize 2
-                      :readOnly true}))
+                      :matchBrackets true
+                      :tabSize 2}))
 
-(defn map-as-hiccup [frag]
-  (map as-hiccup frag))
+(defn html->hiccup [val snippet?]
+  (if snippet?
+    (map as-hiccup (parse-fragment val))
+    (as-hiccup (parse val))))
 
-(defn handle-parse [e]
-  (let [hiccup (-> (.. e -target -value)
-                   ;(string/replace (re-pattern "\\s+(?![^<>]*(<\\/pre>|<\\/style>|<\\/textarea>))") "$1") ;; remove whitespace
-                   parse-fragment
-                   map-as-hiccup
-                   str
-                   ;; remove outer parens ()
-                   (string/replace-first #"^\((.*)\)" "$1")
-                   ;; remove weird "\n    "
-                   (string/replace #"\"(\s*\\n\s*(\w)*)*\"" "$2")
-                   ;; start every opening [ on new line
-                   (string/replace #"\[" "\n[")
-                   ;; remove empty {}
-                   (string/replace #" \{\}" "")
-                   ;; remove trailing whitespace and empty strings
-                   (string/replace #"([\]\}])(\s*(\"\s*\"\s*)*)[\n]" "$1\n")
-                   ;; remove initial \n
-                   (string/replace-first #"^\n" "")
-                   ;; remove whitespace between closing brackets;
-                   (string/replace #"(\]+[ \t]+)+" (fn [m] (string/replace m #"\s+" ""))))]
-    (.setValue cm hiccup)
-    (.execCommand cm "selectAll")
-    (.execCommand cm "indentAuto")))
+(defn handle-parse [val]
+  (-> val
+      (html->hiccup true)
+      str
+      ;; remove outer parens ()
+      (string/replace-first #"^\((.*)\)" "$1")
+      ;; remove weird "\n    "
+      (string/replace #"\"(\s*\\n\s*(\w)*)*\"" "$2")
+      ;; start every opening [ on new line
+      (string/replace #"\[" "\n[")
+      ;; remove empty {}
+      (string/replace #" \{\}" "")
+      ;; remove trailing whitespace and empty strings
+      (string/replace #"([\]\}])(\s*(\"\s*\"\s*)*)[\n]" "$1\n")
+      ;; remove initial \n
+      (string/replace-first #"^\n" "")
+      ;; remove whitespace between closing brackets;
+      (string/replace #"(\]+[ \t]+)+" (fn [m] (string/replace m #"\s+" "")))))
 
-(dommy/listen! (sel1 :#from-txt) :keyup handle-parse)
+(.on cm-html "change"
+  (fn [] 
+    (.setValue cm-clojure (handle-parse (.getValue cm-html)))
+    (.execCommand cm-clojure "selectAll")
+    (.execCommand cm-clojure "indentAuto")))

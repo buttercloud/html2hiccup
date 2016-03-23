@@ -9,8 +9,8 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "0.0-3308"]
                  [leiningen "2.5.0"]
-                 [prismatic/dommy "1.0.0"]
-                 [hickory "0.6.0"]]
+                 [hickory "0.6.0"]
+                 [cljsjs/codemirror "5.11.0-1"]]
 
   :plugins [[lein-cljsbuild "1.0.3"]
             [lein-simpleton "1.3.0"]]
@@ -29,7 +29,6 @@
                               :compiler {:optimizations :advanced
                                          :output-to "js/app.js"
                                          :output-dir "js/prod/out"
-                                         :externs ["js/codemirror-externs.js"]
                                          :pretty-print false
                                          :closure-warnings {:externs-validation :off
                                                             :non-standard-jsdoc :off}}}}})
