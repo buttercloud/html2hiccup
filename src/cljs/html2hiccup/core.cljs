@@ -41,8 +41,11 @@
       str
       ;; remove outer parens ()
       (string/replace-first #"^\((.*)\)" "$1")
-      ;; remove weird "\n    "
+      ;; remove trailing "\n    "
       (string/replace #"\"(\s*\\n\s*(\w)*)*\"" "$2")
+      ;; remove in string "\n    "
+      (string/replace #"\"(\\n\s*)" "\"")
+      (string/replace #"(\\n\s*)\"" "\"")
       ;; start every opening [ on new line
       (string/replace #"\[" "\n[")
       ;; remove empty {}
